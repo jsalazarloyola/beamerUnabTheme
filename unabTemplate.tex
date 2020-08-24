@@ -1,0 +1,158 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{unab}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{ulem}
+\usepackage{array}
+\usepackage{siunitx}
+
+% Configuración de colores para mostrar comandos de teclado
+\usepackage[os=win]{menukeys}
+\newmenucolortheme{mycolors}{named}{white}{unabburdeo}{unabblue}
+\changemenucolortheme{menus}{mycolors}
+\changemenucolortheme{roundedkeys}{mycolors}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=green!50!black}
+
+\graphicspath{{figs/}}
+\DeclareGraphicsExtensions{.png, .jpg, .pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONFIGURACIÓN DE CÓDIGO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+
+\renewcommand{\lstlistingname}{Código}
+\lstset{
+	basicstyle=\small\ttfamily,
+	extendedchars=\true,
+    captionpos=b,
+	breaklines=true,
+	tabsize=4,
+	showstringspaces=false,
+	aboveskip=\baselineskip,
+	belowskip=1.25\baselineskip,
+	extendedchars=\true,
+	inputencoding=utf8,
+	literate={á}{{\'a}}1
+	 {é}{{\'e}}1
+	 {í}{{\'i}}1 
+	 {ó}{{\'o}}1
+	 {ú}{{\'u}}1
+	 {ñ}{{\~n}}1
+	 {ò}{{\`o}}1
+	 {ü}{{\"u}}1,
+}
+
+\lstdefinestyle{python}
+{
+    language={Python},
+    frame=single,
+    %===========================================================
+    framesep=3pt,%expand outward.
+    framerule=0.4pt,%expand outward.
+    xleftmargin=3.4pt,%make the frame fits in the text area. 
+    xrightmargin=3.4pt,%make the frame fits in the text area.
+    %=========================================================== 
+    rulecolor=\color{unabburdeo},
+    %=========================================================== 
+    morekeywords={as, self},
+    keywordstyle=\color{orange},
+    %identifierstyle=\color{cyan},
+    stringstyle=\color{red},
+    commentstyle=\color{teal},
+    %=========================================================== 
+    morekeywords={True, False},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Información del documento
+\title{Template de Ejemplo}
+\subtitle{Usando formato de la \textsc{Unab}}
+\date{\today}
+\author[Autor]{Le Autor}
+\institute{Universidad Andrés Bello}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INICIO
+\begin{document}
+
+\AtBeginSection{
+	\begin{frame}{Contenidos}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Sección random}
+\begin{frame}{Título}{Y le subtítulo}
+	Le texto de ejemplo.
+	
+	En varios párrafos y con algo de texto \alert{resaltado}
+\end{frame}
+
+\begin{frame}{Le Listas}{Más ejemplos}
+	\begin{itemize}
+	\item Listas con cosas random:
+		\begin{itemize}
+		\item Como esta.
+		\item Y esta.
+		\item Y esta otra.
+		\end{itemize}
+
+	\item Para enumerar, también:
+		\begin{enumerate}
+		\item Le primer ítem
+		\item Le segundo ítem
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Le Bloques}{Ejemplos de los más usados}
+	\begin{block}{Le título}
+		Le bloque con \alert{título} (bloque básico, en realidad).
+	\end{block}
+	
+	\begin{definition}
+		Este es para \alert{definir} cosas.
+	\end{definition}
+	
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Le Bloques matemáticos}{Teorema y pruebas}
+	\begin{theorem}[De ejemplo]
+		El bloque de estilo básico es el \alert{theorem}.
+	\end{theorem}
+
+	\begin{proof}
+		La demostración es que los demás bloques están basados en ese.
+	\end{proof}
+	
+	\begin{example}[Le ejemplo]
+		Como este.
+	\end{example}
+	
+	\begin{corollary}
+		Podemos incluir corolarios y porquerías.
+	\end{corollary}
+	
+	\begin{fact}
+		Le constatación de hechos
+	\end{fact}
+	
+	\begin{lemma}
+		Un lema loco\ldots
+	\end{lemma}
+\end{frame}
+
+\end{document}
